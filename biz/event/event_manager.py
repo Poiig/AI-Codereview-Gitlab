@@ -61,7 +61,8 @@ def on_push_reviewed(entity: PushReviewEntity):
         url = commit.get('url', '#')
         im_msg += (
             f"- **提交信息**: {message}\n"
-            f"- **提交者**: {author}\n"
+            f"- **提交者**: {entity.user_username}"
+            f" <@{entity.user_username}> \n"
             f"- **时间**: {timestamp}\n"
             f"- [查看提交详情]({url})\n\n"
         )
